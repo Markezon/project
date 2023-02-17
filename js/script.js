@@ -41,7 +41,7 @@ const a = prompt('Один из последних просмотренных ф
 personalMovieDB.movies[a] = b;
 personalMovieDB.movies[c] = d;
 
-console.log(personalMovieDB);
+console.log(personalMovieDB); */
 
 
 if (4 == 4) {
@@ -193,10 +193,10 @@ if (hamburger && cola || fries === 3 && nuggets) {
    console.log('Done!')
 }
 
- */
+
 //Циклы
 
-/* let num = 50;
+let num = 50;
 
 while (num <= 55) {
     console.log(num);
@@ -230,10 +230,10 @@ for (let i = 1; i < 10; i++) {
     console.log(i);
 }
 
- */
+
 //цикл в цикле и метки
 
-/* for (let i = 0; i < 3; i++) {
+for (let i = 0; i < 3; i++) {
     console.log(i);
     for (let j = 0; j < 3; j++) {
         console.log(j);
@@ -255,67 +255,129 @@ for (let i = 1; i < length; i++) {
 console.log(result);
 
 
- */
+
 //метка
-/* first: for (let i = 0; i < 3; i++) {
+first: for (let i = 0; i < 3; i++) {
     console.log(`First level: ${i}`);
     for (let j = 0; j < 3; j++) {
         console.log(`Second level: ${j}`);
         for (let k = 0; k < 3; k++) {
             if (k === 2) continue first;
-            console.log(`Third level: ${k}`);
-        }
+            console.log(`Third level: ${k}`);  
+        } 
     }
 }
- */
 
-/* Задание на урок:
+//ФУНКЦИИ
 
-1) Автоматизировать вопросы пользователю про фильмы при помощи цикла
+//Function declaration
 
-2) Сделать так, чтобы пользователь не мог оставить ответ в виде пустой строки,
-отменить ответ или ввести название фильма длинее, чем 50 символов. Если это происходит - 
-возвращаем пользователя к вопросам опять
+let num = 20;
 
-3) При помощи условий проверить  personalMovieDB.count, и если он меньше 10 - вывести сообщение
-"Просмотрено довольно мало фильмов", если от 10 до 30 - "Вы классический зритель", а если больше - 
-"Вы киноман". А если не подошло ни к одному варианту - "Произошла ошибка"
+function showFirstMessage(text) {
+    console.log(num);
+    console.log(text);
+}
 
-4) Потренироваться и переписать цикл еще двумя способами*/
+showFirstMessage("Hello World!");
 
 
 
-const numberOfFilms = +prompt ('Сколько фильмов вы уже посмотрели?', '');
+function calc(a, b) {
+    return (a + b);
+}
 
-const personalMovieDB = {
-    count: numberOfFilms,
-    movies: {},
-    actors: {},
-    genres: [],
-    privat: false
+console.log(calc(4, 3));
+console.log(calc(5, 6));
+console.log(calc(10, 6));
+
+
+function ret() {
+    let num = 50;
+    return num;
+}
+
+const anotherNum = ret();
+console.log(anotherNum);
+
+//function expression
+
+let logger = function() {
+    console.log("Hello");
 };
 
-for (let i = 0; i < 2; i++) {
-    const a = prompt('Один из последних просмотренных фильмов?', ''),
-          b = prompt('На сколько оцените его?', '');   
+logger();
 
-    if (a != null && b != null && a != '' && b != '' && a.length < 50 ) {
-        personalMovieDB.movies[a] = b;
-        console.log('done');
-    } else {
-        console.log('error');
-        i--;
-    }    
+//стрелочная функция
+
+const calc = (a, b) =>  a + b;
+//const calc = (a, b) => { return a + b };
+function calc(a, b) {
+    return (a + b);
 }
 
-if (personalMovieDB.count < 10) {
-    console.log("Просмотрено довольно мало фильмов");
-} else if (personalMovieDB.count >= 10 && personalMovieDB.count < 30) {
-    console.log("Вы классический зритель");
-} else if (personalMovieDB.count >= 30) {
-    console.log("Вы киноман");
-} else {
-    console.log("Произошла ошибка");
+console.log(calc(4, 3));
+console.log(calc(5, 6));
+console.log(calc(10, 6));
+
+
+
+////
+const usdCurr = 28;
+const eurCurr = 32;
+
+function convert(amount, curr) {
+    console.log(curr * amount);
 }
 
-console.log(personalMovieDB);
+convert(500, usdCurr);
+convert(500, eurCurr);  
+////
+
+const usdCurr = 28;
+const discount = 0.9;
+
+function convert(amount, curr) {
+    return curr * amount;
+}
+
+function promotion(result) {
+    console.log(result * discount);
+}
+
+/* promotion(convert(500, usdCurr)); */
+const res = convert(500, usdCurr);
+promotion(res);
+
+////// сметоды и свойства строк и чисел
+
+const str = "teSt";
+
+// console.log(str.[2] = 'd');
+
+// console.log(str.toUpperCase( ));
+console.log(str.toLowerCase( ));  
+
+console.log(str);
+
+
+const fruit = "Some fruit";
+
+console.log(fruit.indexOf("fruit"));
+
+
+const logg = "Hello world!";
+
+console.log(logg.slice(6, 11));
+console.log(logg.substring(6, 11));
+console.log(logg.substr(6, 5));
+
+
+
+const num = 12.2;
+console.log(Math.round(num));
+
+
+const test = "12.2px";
+console.log(parseInt(test));
+console.log(parseFloat(test));
